@@ -169,7 +169,7 @@ Phân tích toàn bộ transcript cuộc họp/hội ý được cung cấp và 
 
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
-      contents: { parts: [{ text: finalPrompt }] }
+      contents: finalPrompt
     });
     return response.text || "Không thể tạo bản recap.";
   } catch (error) {
@@ -211,7 +211,7 @@ export const generateEmail = async (transcript: string, emailType: string): Prom
 
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
-      contents: `${finalPrompt}`
+      contents: finalPrompt
     });
     return response.text || "Không thể soạn email.";
   } catch (error) {

@@ -385,7 +385,7 @@ const MeetingRecap: React.FC<MeetingRecapProps> = ({ lang, initialTranscript, on
 
               <div className="pt-2">
                 <p className="text-[11px] text-center text-gray-400 font-black uppercase tracking-[0.3em] opacity-80">
-                  Powered by Gemini 3.1 Pro • Factory Operations Analyst Agent
+                  Powered by Gemini 3 Flash • Factory Operations Analyst Agent
                 </p>
               </div>
             </div>
@@ -420,7 +420,7 @@ const MeetingRecap: React.FC<MeetingRecapProps> = ({ lang, initialTranscript, on
             {/* Unified Footer for sub-components */}
             <div className="px-10 py-6 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 text-center">
               <p className="text-[11px] font-black text-gray-400 uppercase tracking-[0.3em] opacity-80">
-                Powered by Gemini 3.1 Pro • Factory Operations Analyst Agent
+                Powered by Gemini 3 Flash • Factory Operations Analyst Agent
               </p>
             </div>
           </div>
