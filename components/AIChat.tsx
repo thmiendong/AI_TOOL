@@ -60,6 +60,13 @@ const AIChat: React.FC<AIChatProps> = ({ lang, hideHeader }) => {
       setMessages(prev => [...prev, aiMsg]);
     } catch (error) {
       console.error(error);
+      const errorMsg: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: lang === 'vi' ? 'Có lỗi xảy ra khi trò chuyện cùng AI. Vui lòng kiểm tra API Key.' : 'Error chatting with AI. Please check your API Key.',
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, errorMsg]);
     } finally {
       setIsLoading(false);
     }

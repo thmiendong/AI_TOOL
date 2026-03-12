@@ -129,6 +129,13 @@ const Translation: React.FC<TranslationProps> = ({ lang, initialTranscript, onCl
       setMessages(prev => [...prev, aiMsg]);
     } catch (error) {
       console.error(error);
+      const errorMsg: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: lang === 'vi' ? 'Có lỗi xảy ra khi dịch thuật. Vui lòng kiểm tra API Key.' : 'Error translating. Please check your API Key.',
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, errorMsg]);
     } finally {
       setIsLoading(false);
     }

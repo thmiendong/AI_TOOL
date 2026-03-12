@@ -168,7 +168,7 @@ Phân tích toàn bộ transcript cuộc họp/hội ý được cung cấp và 
       : `Hãy tạo một MẪU (Template) trống cho: ${basePrompt}. Vì chưa có nội dung cuộc họp, hãy tạo khung sườn chuyên nghiệp để người dùng có thể tự điền vào.`;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-3-flash-preview',
       contents: { parts: [{ text: finalPrompt }] }
     });
     return response.text || "Không thể tạo bản recap.";
@@ -210,7 +210,7 @@ export const generateEmail = async (transcript: string, emailType: string): Prom
       : `Hãy tạo một MẪU EMAIL (Email Template) chuyên nghiệp cho mục đích: ${basePrompt}. Để các phần [Họ tên], [Nội dung],... trong ngoặc vuông để người dùng tự điền.`;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-3-flash-preview',
       contents: `${finalPrompt}`
     });
     return response.text || "Không thể soạn email.";
@@ -232,7 +232,7 @@ export const pureChatWithAI = async (userMessage: string, history: { role: strin
       { role: 'user', parts: [{ text: userMessage }] }
     ];
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-3-flash-preview',
       contents: contents as any,
       config: {
         systemInstruction: `Hôm nay là ${dateStr}, bây giờ là ${timeStr}. Bạn là một trợ lý ảo thông minh. Hãy luôn ghi nhớ thời gian hiện tại để trả lời các câu hỏi liên quan đến ngày tháng một cách chính xác.`
