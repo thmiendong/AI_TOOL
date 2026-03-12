@@ -1,0 +1,9 @@
+{
+  "name": "TH MIỀN ĐÔNG: Gemini Audio & Screen Studio V2",
+  "description": "Công cụ chuyên nghiệp để chuyển đổi âm thanh, hình ảnh và quay màn hình cuộc họp sử dụng AI Gemini.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera",
+    "display-capture"
+  ]
+}
